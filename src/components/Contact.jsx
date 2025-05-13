@@ -25,6 +25,10 @@ const Text = styled.div`
 const P = styled.p`
   font-size: 1.3rem;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const H1 = styled.h1`
@@ -91,7 +95,6 @@ const ContentP = styled.p`
     font-size: 1.3rem;
   }
 `;
-
 
 const Contact = () => {
   const [open, setOpen] = useState(false);
