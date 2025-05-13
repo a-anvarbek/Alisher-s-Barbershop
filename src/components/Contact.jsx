@@ -73,6 +73,10 @@ const Title = styled.h1`
   text-align: center;
   width: 100%;
   padding: 0px 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const Content = styled.a`
