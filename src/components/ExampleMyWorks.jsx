@@ -5,7 +5,7 @@ import Image2 from "../Images/img2.jpg";
 import Image3 from "../Images/img3.jpg";
 import Image4 from "../Images/img4.jpg";
 import Image5 from "../Images/img7.jpg";
-import Image6 from "../Images/instagram.png";
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 
 const Wrapper = styled.div`
@@ -85,8 +85,8 @@ const Item5 = styled(Img)`
 `;
 
 const Footer = styled.div`
-  background-color: #111;
-  color: #eee;
+  /* background-color: #111; */
+  color: #888;
   padding: 40px 20px;
   height: 160px;
   text-align: center;
@@ -95,12 +95,18 @@ const Footer = styled.div`
   align-items: center;
 `;
 
-const H1 = styled.h1``;
+const FooterP = styled.p`
+    font-size: 1.3rem;
+    width: 100%;
+    text-align: center;
+`
+
 
 const ExampleMyWorks = () => {
   return (
     <Wrapper>
       <Title>Bizning Makonimiz</Title>
+      
       <Content>
         <Item1 src={Image1} />
         <Item3 src={Image3} />
@@ -108,10 +114,9 @@ const ExampleMyWorks = () => {
         <Item5 src={Image5} />
         <Item2 src={Image2} />
       </Content>
+
       <Footer>
-        {/* <ContentFooter href="">
-          <Img src={Image6} />
-        </ContentFooter> */}
+          <FooterP>&copy;2025 a-anvarbek & NextPage</FooterP>
       </Footer>
     </Wrapper>
   );

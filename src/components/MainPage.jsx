@@ -48,8 +48,8 @@ const Case = styled.div`
   margin-top: 50px;
 
   @media (max-width: 768px) {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
 `;
 
@@ -58,8 +58,8 @@ const Img = styled.img`
   height: 250px;
 
   @media (max-width: 768px) {
-    width: 175px;
-    height: 175px;
+    width: 125px;
+    height: 125px;
   }
 `;
 
