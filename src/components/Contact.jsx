@@ -29,6 +29,10 @@ const P = styled.p`
 
 const H1 = styled.h1`
   padding: 20px 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const Button = styled.button`
@@ -82,7 +86,12 @@ const Img = styled.img`
 const ContentP = styled.p`
   font-size: 1.7rem;
   color: blue;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
+
 
 const Contact = () => {
   const [open, setOpen] = useState(false);
