@@ -119,9 +119,9 @@ const Contact = () => {
           <DialogWrapper>
             <Title>Bog'lanish uchun</Title>
 
-            <Content href="">
+            <Content href="https://www.instagram.com/alisher.barber.nmg?igsh=MTRyc213N2tqdTcwcQ==">
               <Img src={Image1} />
-              <ContentP>Alisher Barbershop</ContentP>
+              <ContentP>alisher.barber.nmg</ContentP>
             </Content>
 
             <Content href="">
