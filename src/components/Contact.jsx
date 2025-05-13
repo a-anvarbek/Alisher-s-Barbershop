@@ -129,7 +129,7 @@ const Contact = () => {
           qabul qilinadi — biz bilan telefon yoki instagram orqali bog‘laning.
         </P>
 
-        <Button onClick={handleOpenDialog}>Contact</Button>
+        <Button onClick={handleOpenDialog}>Bog'lanish uchun</Button>
 
         <Dialog open={open} onClose={() => setOpen(false)}>
           <DialogWrapper>
