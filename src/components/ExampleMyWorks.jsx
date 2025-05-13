@@ -109,9 +109,9 @@ const ExampleMyWorks = () => {
         <Item2 src={Image2} />
       </Content>
       <Footer>
-        <ContentFooter href="">
+        {/* <ContentFooter href="">
           <Img src={Image6} />
-        </ContentFooter>
+        </ContentFooter> */}
       </Footer>
     </Wrapper>
   );
