@@ -73,6 +73,10 @@ const Title = styled.h1`
   text-align: center;
   width: 100%;
   padding: 0px 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const Content = styled.a`
@@ -106,7 +110,7 @@ const Contact = () => {
   return (
     <Wrapper>
       <Text>
-        <H1>ALISHER'S BARBERSHOP</H1>
+        <H1>ALISHER'S BARBER</H1>
         <P>
           Namangan shahrida joylashganmiz va 2012-yildan beri mijozlarimizga
           xizmat ko‘rsatib kelmoqdamiz. Biz salonimizda sizga ajoyib tajriba
@@ -125,7 +129,7 @@ const Contact = () => {
           qabul qilinadi — biz bilan telefon yoki instagram orqali bog‘laning.
         </P>
 
-        <Button onClick={handleOpenDialog}>Contact</Button>
+        <Button onClick={handleOpenDialog}>Bog'lanish uchun</Button>
 
         <Dialog open={open} onClose={() => setOpen(false)}>
           <DialogWrapper>
@@ -136,7 +140,7 @@ const Contact = () => {
               <ContentP>alisher.barber.nmg</ContentP>
             </Content>
 
-            <Content href="">
+            <Content href="https://t.me/solievAlisher">
               <Img src={Image2} />
               <ContentP>Alisher Barbershop</ContentP>
             </Content>
