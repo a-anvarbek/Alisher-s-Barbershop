@@ -1,10 +1,11 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 import Image from "../Images/Background.jpg";
 import Image2 from "../Images/Background2.jpg";
 import Image3 from "../Images/img2.jpg";
 import Image4 from "../Images/img7.jpg";
-import Image5 from "../Images/img6.jpg";
+import Image5 from "../Images/img8.jpg";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -56,27 +57,79 @@ const Case = styled.div`
 const Img = styled.img`
   width: 250px;
   height: 250px;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    width: 270px;
+    height: 270px;
+    transform: scale(1.05);
+  }
 
   @media (max-width: 768px) {
     width: 125px;
     height: 125px;
+
+    &:hover {
+      width: 150px;
+      height: 150px;
+      transform: scale(1.05);
+    }
   }
 `;
 
+const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+`;
+
+const ImgModal = styled.img`
+  max-width: 90%;
+  max-height: 90%;
+`;
+
+const images = [
+  {
+    image: Image3,
+  },
+  {
+    image: Image4,
+  },
+  {
+    image: Image5,
+  },
+];
+
 const MainPage = () => {
+  const [selectedImg, setSelectedImg] = useState(null);
+
   return (
     <Wrapper>
       <Container>
-        <Case>
-          <Img src={Image3} />
-        </Case>
-        <Case>
-          <Img src={Image4} />
-        </Case>
-        <Case>
-          <Img src={Image5} />
-        </Case>
+        {images.map((img, index) => (
+          <Case key={index}>
+            <Img
+              src={img.image}
+              alt={`Image ${index}`}
+              onClick={() => setSelectedImg(img.image)}
+            />
+          </Case>
+        ))}
       </Container>
+
+      {selectedImg && (
+        <Modal onClick={() => setSelectedImg(null)}>
+          <ImgModal src={selectedImg} alt="Enlarged" />
+        </Modal>
+      )}
     </Wrapper>
   );
 };

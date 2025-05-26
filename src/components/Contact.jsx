@@ -110,7 +110,7 @@ const Contact = () => {
   return (
     <Wrapper>
       <Text>
-        <H1>ALISHER'S BARBERSHOP</H1>
+        <H1>ALISHER'S BARBER</H1>
         <P>
           Namangan shahrida joylashganmiz va 2012-yildan beri mijozlarimizga
           xizmat ko‘rsatib kelmoqdamiz. Biz salonimizda sizga ajoyib tajriba
@@ -140,7 +140,7 @@ const Contact = () => {
               <ContentP>alisher.barber.nmg</ContentP>
             </Content>
 
-            <Content href="">
+            <Content href="https://t.me/solievAlisher">
               <Img src={Image2} />
               <ContentP>Alisher Barbershop</ContentP>
             </Content>

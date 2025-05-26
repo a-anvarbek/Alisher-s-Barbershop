@@ -5,8 +5,8 @@ import Image2 from "../Images/img2.jpg";
 import Image3 from "../Images/img3.jpg";
 import Image4 from "../Images/img4.jpg";
 import Image5 from "../Images/img7.jpg";
-import InstagramIcon from '@mui/icons-material/Instagram';
-
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { useState } from "react";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -51,6 +51,7 @@ const Img = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  cursor: pointer;
 `;
 
 // Grid position
@@ -85,7 +86,6 @@ const Item5 = styled(Img)`
 `;
 
 const Footer = styled.div`
-  /* background-color: #111; */
   color: #888;
   padding: 40px 20px;
   height: 160px;
@@ -95,28 +95,78 @@ const Footer = styled.div`
   align-items: center;
 `;
 
-const FooterP = styled.p`
-    font-size: 1.3rem;
-    width: 100%;
-    text-align: center;
-`
+const FooterA = styled.a`
+  font-size: 1.3rem;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #808080;
+  cursor: pointer;
+`;
 
+const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+`;
+
+const ImgModal = styled.img`
+  max-width: 90%;
+  max-height: 90%;
+`;
+
+const images = [
+  { image: Image1, type: 'Item1' },
+  { image: Image3, type: 'Item3' },
+  { image: Image4, type: 'Item4' },
+  { image: Image5, type: 'Item5' },
+  { image: Image2, type: 'Item2' },
+];
 
 const ExampleMyWorks = () => {
+  const [selectedImg, setSelectedImg] = useState(null);
+
+  const imageComponents = {
+    Item1,
+    Item2,
+    Item3,
+    Item4,
+    Item5,
+  };
+
   return (
     <Wrapper>
       <Title>Bizning Makonimiz</Title>
-      
+
       <Content>
-        <Item1 src={Image1} />
-        <Item3 src={Image3} />
-        <Item4 src={Image4} />
-        <Item5 src={Image5} />
-        <Item2 src={Image2} />
+        {images.map((img, index) => {
+          const ImgComponent = imageComponents[img.type] || Img;
+          return (
+            <ImgComponent
+              key={index}
+              src={img.image}
+              alt={`Image ${index}`}
+              onClick={() => setSelectedImg(img.image)}
+            />
+          );
+        })}
       </Content>
 
+      {selectedImg && (
+        <Modal onClick={() => setSelectedImg(null)}>
+          <ImgModal src={selectedImg} alt="Full view" />
+        </Modal>
+      )}
+
       <Footer>
-          <FooterP>&copy;2025 a-anvarbek & NextPage</FooterP>
+        <FooterA href="https://t.me/NextPageDev">&copy;2025 a-anvarbek & NextPage</FooterA>
       </Footer>
     </Wrapper>
   );
